@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="src/css/styles.css">
+    <title>Sidebar</title>
+</head>
+<body>
+    <nav id="sidebar">
+        <div id="sidebar_content">
+            <div id="user">
+                <img src="src/images/avatar.jpg" id="user_avatar" alt="Avatar">
+    
+                <p id="user_infos">
+                    <span class="item-description">
+                        Fulano de Tal
+                    </span>
+                    <span class="item-description">
+                        Lorem Ipsum
+                    </span>
+                </p>
+            </div>
+    
+            <ul id="side_items">
+                <li class="side-item active">
+                    <a href="#">
+                        <i class="fa-solid fa-chart-line"></i>
+                        <span class="item-description">
+                            Obras em Andamento
+                        </span>
+                    </a>
+                </li>
+    
+                <li class="side-item">
+                    <a href="#">
+                        <i class="fa-solid fa-user"></i>
+                        <span class="item-description">
+                            Usuários 
+                        </span>
+                    </a>
+                </li>
+    
+                <li class="side-item">
+                    <a href="#">
+                        <i class="fa-solid fa-bell"></i>
+                        <span class="item-description">
+                            Notificações
+                        </span>
+                    </a>
+                </li>
+    
+                <li class="side-item">
+                    <a href="#">
+                        <i class="fa-solid fa-box"></i>
+                        <span class="item-description">
+                            Obras
+                        </span>
+                    </a>
+                </li>
+    
+                <li class="side-item">
+                    <a href="#">
+                        <i class="fa-solid fa-image"></i>
+                        <span class="item-description">
+                            
+                        </span>
+                    </a>
+                </li>
+    
+                <li class="side-item">
+                    <a href="#">
+                        <i class="fa-solid fa-gear"></i>
+                        <span class="item-description">
+                            Configurações
+                        </span>
+                    </a>
+                </li>
+            </ul>
+    
+            <button id="open_btn">
+                <i id="open_btn_icon" class="fa-solid fa-chevron-right"></i>
+            </button>
+        </div>
+
+        <div id="logout">
+            <button id="logout_btn">
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span class="item-description">
+                    Logout
+                </span>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+        <h1>Acompanhamento De Obras</h1>
+        <!-- Área para o Nome da Obra -->
+    <div class="obra-nome">
+        <label for="nome_obra">Nome da Obra:</label>
+        <input type="text" id="nome_obra" placeholder="Digite o nome da obra">
+    </div>
+
+    <!-- Fluxo 1: Proposta -->
+    <div class="fluxograma">
+        <h2>Fluxo 1: Proposta</h2>
+        <div class="linha">
+            <div class="etapa" id="orcamento">
+                <p>Orçamento</p>
+                <button class="btn-anotacoes" onclick="mostrarAnotacoes('orcamento')">Anotações</button>
+                <button class="btn-detalhes" onclick="mostrarPrioridades('orcamento')">Editar Prioridade</button>
+                <div class="responsavel">
+                    <input type="text" placeholder="Responsável" id="responsavel_orcamento">
+                </div>
+            </div>
+            <div class="seta direita"></div>
+            <div class="etapa" id="levantamento_custo">
+                <p>Levantamento de Custo</p>
+                <button class="btn-anotacoes" onclick="mostrarAnotacoes('levantamento_custo')">Anotações</button>
+                <button class="btn-detalhes" onclick="mostrarPrioridades('levantamento_custo')">Editar Prioridade</button>
+                <div class="responsavel">
+                    <input type="text" placeholder="Responsável" id="responsavel_levantamento_custo">
+                </div>
+            </div>
+            <div class="seta direita"></div>
+            <div class="etapa" id="orcamento_feito">
+                <p>Orçamento Feito</p>
+                <button class="btn-anotacoes" onclick="mostrarAnotacoes('orcamento_feito')">Anotações</button>
+                <button class="btn-detalhes" onclick="mostrarPrioridades('orcamento_feito')">Editar Prioridade</button>
+                <div class="responsavel">
+                    <input type="text" placeholder="Responsável" id="responsavel_orcamento_feito">
+                </div>
+            </div>
+            <div class="seta direita"></div>
+            <div class="decisao" id="enviado">
+                <p>Enviado</p>
+                <button class="btn-anotacoes" onclick="mostrarAnotacoes('enviado')">Anotações</button>
+                <button class="btn-detalhes" onclick="mostrarPrioridades('enviado')">Editar Prioridade</button>
+                <div class="responsavel">
+                    <input type="text" placeholder="Responsável" id="responsavel_enviado">
+                </div>
+            </div>
+            <div class="seta direita"></div>
+            <div class="etapa" id="relembrar_cliente">
+                <p>Relembrar Clientes Sobre Orçamento</p>
+                <button class="btn-anotacoes" onclick="mostrarAnotacoes('relembrar_cliente')">Anotações</button>
+                <button class="btn-detalhes" onclick="mostrarPrioridades('relembrar_cliente')">Editar Prioridade</button>
+                <div class="responsavel">
+                    <input type="text" placeholder="Responsável" id="responsavel_relembrar_cliente">
+                </div>
+            </div>
+            <div class="seta direita"></div>
+            <div class="etapa" id="nao_aprovado">
+                <p>Não Aprovado</p>
+                <button class="btn-anotacoes" onclick="mostrarAnotacoes('nao_aprovado')">Anotações</button>
+                <button class="btn-detalhes" onclick="mostrarPrioridades('nao_aprovado')">Editar Prioridade</button>
+                <div class="responsavel">
+                    <input type="text" placeholder="Responsável" id="responsavel_nao_aprovado">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Fluxo 2: Execução -->
+    <div class="fluxograma">
+        <h2>Fluxo 2: Execução</h2>
+        <div class="linha">
+            <div class="etapa" id="aprovado">
+                <p>Aprovado</p>
+                <button class="btn-anotacoes" onclick="mostrarAnotacoes('aprovado')">Anotações</button>
+                <button class="btn-detalhes" onclick="mostrarPrioridades('aprovado')">Editar Prioridade</button>
+                <div class="responsavel">
+                    <input type="text" placeholder="Responsável" id="responsavel_aprovado">
+                </div>
+            </div>
+            <div class="seta direita"></div>
+            <div class="etapa" id="levantamento_material">
+                <p>Levantamento de Material</p>
+                <button class="btn-anotacoes" onclick="mostrarAnotacoes('levantamento_material')">Anotações</button>
+                <button class="btn-detalhes" onclick="mostrarPrioridades('levantamento_material')">Editar Prioridade</button>
+                <div class="responsavel">
+                    <input type="text" placeholder="Responsável" id="responsavel_levantamento_material">
+                </div>
+            </div>
+            <div class="seta direita"></div>
+            <div class="etapa" id="divisao_faturamento">
+                <p>Divisão de Faturamento</p>
+                <button class="btn-anotacoes" onclick="mostrarAnotacoes('divisao_faturamento')">Anotações</button>
+                <button class="btn-detalhes" onclick="mostrarPrioridades('divisao_faturamento')">Editar Prioridade</button>
+                <div class="responsavel">
+                    <input type="text" placeholder="Responsável" id="responsavel_divisao_faturamento">
+                </div>
+            </div>
+            <div class="seta direita"></div>
+            <div class="etapa" id="criacao_contrato">
+                <p>Criação de Contrato</p>
+                <button class="btn-anotacoes" onclick="mostrarAnotacoes('criacao_contrato')">Anotações</button>
+                <button class="btn-detalhes" onclick="mostrarPrioridades('criacao_contrato')">Editar Prioridade</button>
+                <div class="responsavel">
+                    <input type="text" placeholder="Responsável" id="responsavel_criacao_contrato">
+                </div>
+            </div>
+            <div class="seta direita"></div>
+            <div class="etapa" id="liberacao_faturamento">
+                <p>Liberação de Faturamento</p>
+                <button class="btn-anotacoes" onclick="mostrarAnotacoes('liberacao_faturamento')">Anotações</button>
+                <button class="btn-detalhes" onclick="mostrarPrioridades('liberacao_faturamento')">Editar Prioridade</button>
+                <div class="responsavel">
+                    <input type="text" placeholder="Responsável" id="responsavel_liberacao_faturamento">
+                </div>
+            </div>
+            <div class="seta direita"></div>
+            <div class="etapa" id="compra_material">
+                <p>Compra de Material</p>
+                <button class="btn-anotacoes" onclick="mostrarAnotacoes('compra_material')">Anotações</button>
+                <button class="btn-detalhes" onclick="mostrarPrioridades('compra_material')">Editar Prioridade</button>
+                <div class="responsavel">
+                    <input type="text" placeholder="Responsável" id="responsavel_compra_material">
+                </div>
+            </div>
+            <div class="seta direita"></div>
+            <div class="etapa" id="cronograma_servico">
+                <p>Cronograma do Serviço</p>
+                <button class="btn-anotacoes" onclick="mostrarAnotacoes('cronograma_servico')">Anotações</button>
+                <button class="btn-detalhes" onclick="mostrarPrioridades('cronograma_servico')">Editar Prioridade</button>
+                <div class="responsavel">
+                    <input type="text" placeholder="Responsável" id="responsavel_cronograma_servico">
+                </div>
+            </div>
+        </div>
+        <div class="linha">
+            <div class="decisao" id="producao">
+                <p>Produção</p>
+                <button class="btn-anotacoes" onclick="mostrarAnotacoes('producao')">Anotações</button>
+                <button class="btn-detalhes" onclick="mostrarPrioridades('producao')">Editar Prioridade</button>
+                <div class="responsavel">
+                    <input type="text" placeholder="Responsável" id="responsavel_producao">
+                </div>
+            </div>
+            <div class="seta direita"></div>
+            <div class="etapa" id="entrega_imediata">
+                <p>Entrega Imediata</p>
+                <button class="btn-anotacoes" onclick="mostrarAnotacoes('entrega_imediata')">Anotações</button>
+                <button class="btn-detalhes" onclick="mostrarPrioridades('entrega_imediata')">Editar Prioridade</button>
+                <div class="responsavel">
+                    <input type="text" placeholder="Responsável" id="responsavel_entrega_imediata">
+                </div>
+            </div>
+            <div class="seta direita"></div>
+            <div class="etapa" id="material_pronto">
+                <p>Material Pronto</p>
+                <button class="btn-anotacoes" onclick="mostrarAnotacoes('material_pronto')">Anotações</button>
+                <button class="btn-detalhes" onclick="mostrarPrioridades('material_pronto')">Editar Prioridade</button>
+                <div class="responsavel">
+                    <input type="text" placeholder="Responsável" id="responsavel_material_pronto">
+                </div>
+            </div>
+            <div class="seta direita"></div>
+            <div class="etapa" id="instalacao">
+                <p>Instalação</p>
+                <button class="btn-anotacoes" onclick="mostrarAnotacoes('instalacao')">Anotações</button>
+                <button class="btn-detalhes" onclick="mostrarPrioridades('instalacao')">Editar Prioridade</button>
+                <div class="responsavel">
+                    <input type="text" placeholder="Responsável" id="responsavel_instalacao">
+                </div>
+            </div>
+        </div>
+        <div class="linha">
+            <div class="etapa" id="entrega_futura">
+                <p>Entrega Futura</p>
+                <button class="btn-anotacoes" onclick="mostrarAnotacoes('entrega_futura')">Anotações</button>
+                <button class="btn-detalhes" onclick="mostrarPrioridades('entrega_futura')">Editar Prioridade</button>
+                <div class="responsavel">
+                    <input type="text" placeholder="Responsável" id="responsavel_entrega_futura">
+                </div>
+            </div>
+            <div class="seta direita"></div>
+            <div class="etapa" id="guardar_material">
+                <p>Guardar Material</p>
+                <button class="btn-anotacoes" onclick="mostrarAnotacoes('guardar_material')">Anotações</button>
+                <button class="btn-detalhes" onclick="mostrarPrioridades('guardar_material')">Editar Prioridade</button>
+                <div class="responsavel">
+                    <input type="text" placeholder="Responsável" id="responsavel_guardar_material">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal para Anotações -->
+    <div id="modal-anotacoes" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="fecharModalAnotacoes()">&times;</span>
+            <p>Adicione suas anotações:</p>
+            <textarea id="anotacao_texto" rows="4" cols="50"></textarea>
+            <button onclick="salvarAnotacoes()">Salvar</button>
+        </div>
+    </div>
+
+    <!-- Modal de Prioridades -->
+    <div id="modal-prioridades" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="fecharModal()">&times;</span>
+            <p>Escolha a Prioridade:</p>
+            <button onclick="definirPrioridade('alta')">Alta (Vermelha)</button>
+            <button onclick="definirPrioridade('media')">Média (Amarela)</button>
+            <button onclick="definirPrioridade('baixa')">Baixa (Verde)</button>
+            <button onclick="definirPrioridade('concluida')">Concluída (Branca)</button>
+        </div>
+    </div>
+    </main>
+    <script src="src/javascript/script.js"></script>
+</body>
+</html>
